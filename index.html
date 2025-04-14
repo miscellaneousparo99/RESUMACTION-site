@@ -3,21 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RESUMACTION</title>
+  <title>RESUMACTION - Resume Builder</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h1>RESUMACTION</h1>
-    <form id="resume-form">
-      <input type="text" id="fullName" placeholder="Full Name" required />
+    <form id="resumeForm">
+      <h2>Personal Details</h2>
+      <input type="text" id="name" placeholder="Full Name" required />
       <input type="email" id="email" placeholder="Email" required />
       <input type="text" id="phone" placeholder="Phone Number" required />
       <textarea id="summary" placeholder="Professional Summary" required></textarea>
+
+      <h2>Education</h2>
+      <input type="text" id="education" placeholder="Degree, Institution, Year" required />
+
+      <h2>Work Experience</h2>
+      <textarea id="experience" placeholder="Role, Company, Duration, Achievements" required></textarea>
+
+      <h2>Skills</h2>
+      <input type="text" id="skills" placeholder="e.g., JavaScript, HTML, CSS" required />
+
+      <h2>Projects</h2>
+      <textarea id="projects" placeholder="Project Name, Description, Tools used"></textarea>
+
       <button type="submit">Generate Resume</button>
     </form>
-    <div id="resume-output"></div>
+
+    <div id="resumePreview" style="display: none;">
+      <h2 id="previewName"></h2>
+      <p id="previewContact"></p>
+      <h3>Professional Summary</h3>
+      <p id="previewSummary"></p>
+      <h3>Education</h3>
+      <p id="previewEducation"></p>
+      <h3>Work Experience</h3>
+      <p id="previewExperience"></p>
+      <h3>Skills</h3>
+      <p id="previewSkills"></p>
+      <h3>Projects</h3>
+      <p id="previewProjects"></p>
+
+      <button onclick="window.print()">Download as PDF</button>
+    </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>

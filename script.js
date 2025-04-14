@@ -1,18 +1,15 @@
-document.getElementById('resume-form').addEventListener('submit', function(e) {
+document.getElementById('resumeForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const fullName = document.getElementById('fullName').value;
-  const email = document.getElementById('email').value;
-  const phone = document.getElementById('phone').value;
-  const summary = document.getElementById('summary').value;
+  document.getElementById('previewName').textContent = document.getElementById('name').value;
+  document.getElementById('previewContact').textContent = 
+    `Email: ${document.getElementById('email').value} | Phone: ${document.getElementById('phone').value}`;
+  document.getElementById('previewSummary').textContent = document.getElementById('summary').value;
+  document.getElementById('previewEducation').textContent = document.getElementById('education').value;
+  document.getElementById('previewExperience').textContent = document.getElementById('experience').value;
+  document.getElementById('previewSkills').textContent = document.getElementById('skills').value;
+  document.getElementById('previewProjects').textContent = document.getElementById('projects').value;
 
-  const resumeHTML = `
-    <h2>${fullName}</h2>
-    <p><strong>Email:</strong> ${email}</p>
-    <p><strong>Phone:</strong> ${phone}</p>
-    <h3>Professional Summary</h3>
-    <p>${summary}</p>
-  `;
-
-  document.getElementById('resume-output').innerHTML = resumeHTML;
+  document.getElementById('resumeForm').style.display = 'none';
+  document.getElementById('resumePreview').style.display = 'block';
 });
